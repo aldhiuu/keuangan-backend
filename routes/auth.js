@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // ⬅ ganti dari bcrypt ke bcryptjs
 const db = require('../db');
 
 // ✅ REGISTER

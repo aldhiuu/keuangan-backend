@@ -1,10 +1,11 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
+require('dotenv').config(); // ini wajib agar .env bisa dibaca
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '', // kosong kalau pakai XAMPP
-  database: 'keuangan_db' // ganti sesuai nama databasenya
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
 
 db.connect((err) => {
